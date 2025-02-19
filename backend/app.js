@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const dotEnv = require('dotenv');
+const dotEnv = require('dotenv'); 
 const path = require('path');
 const connectDatabase = require('./config/connectDatabase');
 dotEnv.config({path:path.join(__dirname,'config','config.env')});
