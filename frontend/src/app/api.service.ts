@@ -13,4 +13,9 @@ export class ApiService {
   getProducts():Observable<any>{
     return this.http.get(environment.apiUrl+'/api/v1/products');
   }
+  searchProducts(searchText:string){
+    return this.http.get(environment.apiUrl+'/api/v1/products',{
+      params:{keyword:searchText}
+    });
+  }
 }
