@@ -33,4 +33,7 @@ export class HomeComponent implements OnInit {
       this.products=this.productsTmp;
     }
   }
+  searchByEnterKey(){
+    this.search();
+  }
 }

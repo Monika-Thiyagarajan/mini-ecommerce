@@ -7,7 +7,8 @@
 
   <div class="col-12 col-md-6 mt-2 mt-md-0">
     <div class="input-group">
-      <input type="text" id="search_field" class="form-control" placeholder="Enter Product Name ..." [(ngModel)]="searchText" (input)="clearSearch()"/>
+      <!-- <input type="text" id="search_field" class="form-control" placeholder="Enter Product Name ..." [(ngModel)]="searchText" (input)="clearSearch()" (keydown.enter)="searchByEnterKey()"/> -->
+      <input type="text" id="search_field" class="form-control" placeholder="Enter Product Name ..." [(ngModel)]="searchText" (input)="searchByEnterKey()"/>
       <div class="input-group-append">
         <button (click)="search()" id="search_btn" class="btn">
           <i class="fa fa-search" aria-hidden="true"></i>
