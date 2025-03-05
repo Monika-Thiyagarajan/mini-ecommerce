@@ -11,29 +11,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   products:any=[];
-  searchText:string='';
-  productsTmp:any=[]
+ 
+  // productsTmp:any=[]
 
   constructor(private apiService : ApiService){
   }
   ngOnInit(): void {
-    this.apiService.getProducts().subscribe((data)=>{
+    this.apiService.getProducts();
+    this.apiService.currentProducts.subscribe((data:any)=>{
       this.products=data.products;
-      this.productsTmp=data.products;
+      // this.productsTmp=data.products;
     })
     
   }
-  search(){
-    this.apiService.searchProducts(this.searchText).subscribe((data:any)=>{
-      this.products=data.products
-    })
-  }
-  clearSearch(){
-    if(this.searchText==''){
-      this.products=this.productsTmp;
-    }
-  }
-  searchByEnterKey(){
-    this.search();
-  }
+ 
 }
